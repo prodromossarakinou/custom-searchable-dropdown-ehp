@@ -50,13 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
-  custom_searchable_dropdown:
+  custom_searchable_dropdown_ehp:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "2.1.1"
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:

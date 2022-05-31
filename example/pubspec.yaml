@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  custom_searchable_dropdown:
+  custom_searchable_dropdown_ehp:
     path: ../
 
 
