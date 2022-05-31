@@ -73,6 +73,7 @@ class CustomSearchableDropDown extends StatefulWidget {
     this.backgroundColor,
     this.dropdownBackgroundColor,
     this.dropdownHintText,
+    this.closeLabel,
   });
 
   @override
