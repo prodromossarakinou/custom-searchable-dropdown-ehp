@@ -29,13 +29,13 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Custom Searchable DropDown Demo',),
+      home: MyHomePage(title: 'Custom Searchable DropDown Demo'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({super.key, this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -46,70 +46,45 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title;
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
-  List listToSearch=[
-    {
-      'name': 'Amir',
-      'class': 12
-    },
-    {
-      'name': 'Raza',
-      'class': 11
-    },
-    {
-      'name': 'Praksh',
-      'class': 10
-    },
-    {
-      'name': 'Nikhil',
-      'class': 9
-    },
-    {
-      'name': 'Sandeep',
-      'class': 8
-    },
-    {
-      'name': 'Tazeem',
-      'class': 7
-    },
-    {
-      'name': 'Najaf',
-      'class': 6
-    },
-    {
-      'name': 'Izhar',
-      'class': 5
-    },
+  List? listToSearch = [
+    {'name': 'Amir', 'class': 12},
+    {'name': 'Raza', 'class': 11},
+    {'name': 'Praksh', 'class': 10},
+    {'name': 'Nikhil', 'class': 9},
+    {'name': 'Sandeep', 'class': 8},
+    {'name': 'Tazeem', 'class': 7},
+    {'name': 'Najaf', 'class': 6},
+    {'name': 'Izhar', 'class': 5},
   ];
 
   var selected;
-  List selectedList;
-
+  List? selectedList;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title ?? ''),
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: <Widget>[
-              SizedBox(height: 20,),
-              Text('Menu Mode',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold
-                ),),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Menu Mode',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomSearchableDropDown(
@@ -121,107 +96,92 @@ class _MyHomePageState extends State<MyHomePage> {
                       'value': 'Amir',
                     }
                   ],
-                  dropdownItemStyle: TextStyle(
-                    color: Colors.red
-                  ),
+                  dropdownItemStyle: TextStyle(color: Colors.red),
                   primaryColor: Colors.red,
                   menuMode: true,
-                  labelStyle: TextStyle(
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold
-                  ),
-                  items: listToSearch,
+                  labelStyle:
+                      TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                  items: listToSearch ?? [],
                   label: 'Select Name',
-                  prefixIcon:  Icon(Icons.search),
+                  prefixIcon: Icon(Icons.search),
                   dropDownMenuItems: listToSearch?.map((item) {
-                    return item['name'];
-                  })?.toList() ??
+                        return item['name'];
+                      }).toList() ??
                       [],
-                  onChanged: (value){
-                    if(value!=null)
-                    {
+                  onChanged: (value) {
+                    if (value != null) {
                       selected = value['class'].toString();
-                    }
-                    else{
-                      selected=null;
+                    } else {
+                      selected = null;
                     }
                   },
                 ),
               ),
-              SizedBox(height: 20,),
-              Text('Select a value',
-              style: TextStyle(
-                fontWeight: FontWeight.bold
-              ),),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Select a value',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomSearchableDropDown(
-                  items: listToSearch,
+                  items: listToSearch ?? [],
                   label: 'Select Name',
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: Colors.blue
-                      )
-                  ),
-                  prefixIcon:  Padding(
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.blue)),
+                  prefixIcon: Padding(
                     padding: const EdgeInsets.all(0.0),
                     child: Icon(Icons.search),
                   ),
                   dropDownMenuItems: listToSearch?.map((item) {
-                    return item['name'];
-                  })?.toList() ??
+                        return item['name'];
+                      }).toList() ??
                       [],
-                  onChanged: (value){
-                    if(value!=null)
-                    {
+                  onChanged: (value) {
+                    if (value != null) {
                       selected = value['class'].toString();
-                    }
-                    else{
-                      selected=null;
+                    } else {
+                      selected = null;
                     }
                   },
                 ),
               ),
-              Text('Multi Select',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold
-                ),),
+              Text(
+                'Multi Select',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomSearchableDropDown(
-                  items: listToSearch,
-
+                  items: listToSearch ?? [],
                   label: 'Select Name',
                   multiSelectTag: 'Names',
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: Colors.blue
-                      )
-                  ),
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.blue)),
                   multiSelect: true,
-                  prefixIcon:  Padding(
+                  prefixIcon: Padding(
                     padding: const EdgeInsets.all(0.0),
                     child: Icon(Icons.search),
                   ),
                   dropDownMenuItems: listToSearch?.map((item) {
-                    return item['name'];
-                  })?.toList() ??
+                        return item['name'];
+                      }).toList() ??
                       [],
-                  onChanged: (value){
-                    if(value!=null)
-                    {
+                  onChanged: (value) {
+                    if (value != null) {
                       selectedList = jsonDecode(value);
-                    }
-                    else{
-                      selectedList.clear();
+                    } else {
+                      selectedList?.clear();
                     }
                   },
                 ),
               ),
-              Text('Multi Select as Widget',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold
-                ),),
+              Text(
+                'Multi Select as Widget',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomSearchableDropDown(
@@ -235,32 +195,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       'value': 'Tazeem',
                     },
                   ],
-                  items: listToSearch,
+                  items: listToSearch ?? [],
                   label: 'Select Name',
                   multiSelectTag: 'Names',
                   multiSelectValuesAsWidget: true,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.blue
-                    )
-                  ),
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.blue)),
                   multiSelect: true,
-                  prefixIcon:  Padding(
+                  prefixIcon: Padding(
                     padding: const EdgeInsets.all(0.0),
                     child: Icon(Icons.search),
                   ),
                   dropDownMenuItems: listToSearch?.map((item) {
-                    return item['name'];
-                  })?.toList() ??
+                        return item['name'];
+                      }).toList() ??
                       [],
-                  onChanged: (value){
+                  onChanged: (value) {
                     print(value.toString());
-                    if(value!=null)
-                    {
+                    if (value != null) {
                       selectedList = jsonDecode(value);
-                    }
-                    else{
-                      selectedList.clear();
+                    } else {
+                      selectedList?.clear();
                     }
                   },
                 ),
