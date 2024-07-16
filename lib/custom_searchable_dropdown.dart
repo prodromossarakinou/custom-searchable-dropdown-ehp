@@ -180,8 +180,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                                                 5, 3, 5, 3),
                                             child: Container(
                                               decoration: new BoxDecoration(
-                                                  color: widget.primaryColor ??
-                                                      Colors.green,
+                                                  color: Colors.white,
                                                   borderRadius:
                                                       BorderRadius.all(
                                                     Radius.circular(5.0),
@@ -556,7 +555,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             itemBuilder: (BuildContext context, int index) {
               return TextButton(
                 style: TextButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: widget.primaryColor ?? Colors.black,
                     padding: EdgeInsets.all(8),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                 child: Padding(
