@@ -556,7 +556,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             itemBuilder: (BuildContext context, int index) {
               return TextButton(
                 style: TextButton.styleFrom(
-                    backgroundColor: widget.primaryColor ?? Colors.black,
+                    backgroundColor: Colors.white,
                     padding: EdgeInsets.all(8),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                 child: Padding(
