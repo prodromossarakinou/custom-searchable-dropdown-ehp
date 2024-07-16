@@ -180,7 +180,8 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                                                 5, 3, 5, 3),
                                             child: Container(
                                               decoration: new BoxDecoration(
-                                                  color: Colors.white,
+                                                  color: widget.primaryColor ??
+                                                      Colors.green,
                                                   borderRadius:
                                                       BorderRadius.all(
                                                     Radius.circular(5.0),
@@ -501,7 +502,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             controller: searchC,
             decoration: InputDecoration(
               fillColor: Colors.white,
-              filled: true,
+              // filled: true,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 borderSide: BorderSide(
