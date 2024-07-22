@@ -1,4 +1,4 @@
-# custom_searchable_dropdown
+`# custom_searchable_dropdown
 
 This is a copy of the official [custom_searchable_dropdown](https://pub.dev/packages/custom_searchable_dropdown) package. I copied it just to adjust few things and use it. I have no intention of making any type of profit out of this code-source.
 
@@ -6,7 +6,7 @@ Widget allows user to search from a dynamic list of data you can customise the d
 
 ## Platforms
 
-This widget has been successfully tested on iOS, Android and Chrome.
+This widget has been successfully tested on iOS, Android and Chrome.d
 
 ## Examples
 

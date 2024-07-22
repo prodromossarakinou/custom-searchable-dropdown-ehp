@@ -17,6 +17,7 @@ class CustomSearchableDropDown extends StatefulWidget {
   String? dropdownHintText;
   TextStyle? labelStyle;
   TextStyle? dropdownItemStyle;
+  TextStyle? searchBoxTextStyle;
   String? hint = '';
   String? multiSelectTag;
   int? initialIndex;
@@ -69,6 +70,7 @@ class CustomSearchableDropDown extends StatefulWidget {
     this.dropdownBackgroundColor,
     this.dropdownHintText,
     this.closeLabel,
+    this.searchBoxTextStyle,
   });
 
   @override
@@ -499,6 +501,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
         child: Padding(
           padding: EdgeInsets.all((widget.menuMode ?? false) ? 0.0 : 8.0),
           child: TextField(
+            style: widget.searchBoxTextStyle,
             controller: searchC,
             decoration: InputDecoration(
               fillColor: Colors.white,
