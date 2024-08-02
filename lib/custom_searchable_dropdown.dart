@@ -431,7 +431,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
               children: [
                 TextButton(
                   style: TextButton.styleFrom(
-                      backgroundColor: widget.primaryColor ?? Colors.black,
+                      backgroundColor: Colors.white,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                   child: Text(
                     widget.closeLabel ?? 'Close',
